@@ -1,6 +1,11 @@
-import { Router } from "express";
-import Reminder from "../models/Reminder.js";
-const router = Router();
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const Reminder_js_1 = __importDefault(require("../models/Reminder.js"));
+const router = (0, express_1.Router)();
 const reminders = new Map();
 let nextId = 1;
 const handleError = (res, message) => {
@@ -15,7 +20,7 @@ router.post("/", (req, res) => {
         handleError(res, "Title is required and must be a string");
         return;
     }
-    const reminder = new Reminder(nextId++, title);
+    const reminder = new Reminder_js_1.default(nextId++, title);
     reminders.set(reminder.id, reminder);
     res.status(201).json(reminder);
 });
@@ -52,4 +57,4 @@ router.delete("/:id", (req, res) => {
     }
     res.status(204).send();
 });
-export default router;
+exports.default = router;
