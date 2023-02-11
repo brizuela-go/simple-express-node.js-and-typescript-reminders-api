@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
-import CreateReminderDTO from "../interfaces/CreateReminderDTO";
-import Reminder from "../models/Reminder";
+import CreateReminderDTO from "../interfaces/CreateReminderDTO.js";
+import Reminder from "../models/Reminder.js";
 
 const router = Router();
 const reminders = new Map<number, CreateReminderDTO>();
