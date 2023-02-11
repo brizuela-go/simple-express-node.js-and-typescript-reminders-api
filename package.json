@@ -2,8 +2,6 @@
   "name": "reminders-api",
   "version": "1.0.0",
   "description": "A Simple API for Reminders made with Node.js, Express and TypeScript",
-  "type": "module",
-  "main": "index.ts",
   "scripts": {
     "start": "nodemon index.ts"
   },
